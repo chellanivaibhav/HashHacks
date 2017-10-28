@@ -75,7 +75,7 @@ export function getImage(index, img_tag) {
       "QmNcpefC61FEbmsjfHotJLEo94bxtqkrRcDYnAGmjxtfcD",
       "QmPVkuCMVKJJnV5JRU2JnNxw7GohUvguRDyYbv6gp8YSR6"
     ];
-    alert(index);
+    console.log(index);
     uploader.loadImage(img_tag, hash[index])
   })
 }

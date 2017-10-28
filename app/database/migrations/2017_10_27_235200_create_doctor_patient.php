@@ -16,6 +16,7 @@ class CreateDoctorPatient extends Migration
         Schema::create('doctor_patient', function (Blueprint $table) {
             $table->integer('doctor_id')->unsigned();
             $table->integer('patient_id')->unsigned();
+            $table->integer('approved')->default(0);
         });
     }
 

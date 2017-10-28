@@ -53,7 +53,7 @@
               <span class="custom-file-control">{uploadFieldName.name}</span>
             </label>
             <a href="#" id="uploadit" class="btn btn-primary mt-1" v-bind:class="{'disabled': uploadFieldName==''}">Upload</a>
-            <p class="lead">or</p><button class="btn btn-warning">Ask for Requests</button>
+            <p class="lead">or</p><button data-toggle="modal" data-target="#exampleModal" class="btn btn-warning">Ask for Requests</button>
           </div>
         </div>
       </section>
@@ -81,8 +81,30 @@
         </p>
       </div>
     </footer>
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request a person for docs</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" class="form-control" v-model="request" placeholder="enter number of person">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" v-on:click="sendRequest">Send Request</button>
+      </div>
+    </div>
+  </div>
+</div>
 	</div>
   <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
   <script type="text/javascript">
   	var app = new Vue({
   el: '#app',
@@ -97,7 +119,8 @@
     phone: "",
     user: 'John',
     uploadFieldName: '',
-    files: ['as', 'sd', 'sds']
+    files: [],
+    request: ''
   },
   methods: {
     update: function(val){
@@ -134,10 +157,17 @@
       }, response => {
         // error callback
       });
+    },
+    sendRequest: function(){
+    	this.$http.get('http://localhost:8000/request/'+this.request).then(function(response){
+
+    	})
     }
   }
 })
 
   </script>
+
+
 </body>
 </html>

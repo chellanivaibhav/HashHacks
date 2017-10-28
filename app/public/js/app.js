@@ -13,7 +13,7 @@ $(function(){
       else 
         index = 1;
       addToIPFS(fileName);
-      getImage(index, document.querySelector('#onetwothree'))
+      getImage(1, document.querySelector('#onetwothree'))
   })
 
 
