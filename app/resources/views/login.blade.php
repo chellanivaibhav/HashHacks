@@ -16,7 +16,7 @@
   <body>
     <div class="container" id="app">
       <div class="mt-5">
-        <h1 class="text-center">Smart Reports</h1>
+        <h1 class="text-center">Smart Reports {doc}</h1>
         <h2 class="text-center mt-5" style="font-weight: 300">I am a...</h2>
         <div class="row" style="margin-top: 130px;">
           <div class="col-sm pr-5" style="border-right: 3px solid #EAEAEA">
@@ -37,15 +37,9 @@
         <div class="row mt-5">
           <div class="col-sm-8 offset-sm-2">
             <div class="input-group input-group-lg" v-show="doc || hos || pat">
-              <input type="text" class="form-control" v-model="phone" placeholder="Enter phone number" aria-label="Your email id">
+              <input type="text" class="form-control" placeholder="your@email.id" aria-label="Your email id">
               <span class="input-group-btn">
-                <button class="btn btn-dark" type="button" v-on:click="login">Login</button>
-              </span>
-            </div>
-            <div class="input-group input-group-lg mt-5" v-show="otpbox">
-              <input type="text" class="form-control" v-model="otp" placeholder="Enter OTP" aria-label="Enter OTP">
-              <span class="input-group-btn">
-                <button class="btn btn-dark" type="button" v-on:click="otppost">Submit</button>
+                <button class="btn btn-dark" type="button">Login</button>
               </span>
             </div>
           </div>
@@ -61,8 +55,9 @@
     <script src="./js/bootstrap/bootstrap.min.js"></script>
     <script src="./js/vue.min.js"></script>
     <script src="./js/a1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+    <script src="https://use.fontawesome.com/9f0b2b725d.js"></script>
 
   </body>
 </html>
+
 
