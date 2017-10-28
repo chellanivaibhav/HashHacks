@@ -1,4 +1,4 @@
-import '../stylesheets/app.css'
+import '../../stylesheets/app.css'
 import { initWeb3, addToIPFS, getImage,getNoOfDocs} from './eth_link'
 
 // Initialize contract and IPFS

@@ -1,7 +1,7 @@
 // Import the page's CSS. Webpack will know what to do with it.
 import { default as Web3} from 'web3';
 import { default as TruffleContract } from 'truffle-contract';
-import sharedoc_artifacts from '../../build/contracts/ShareDoc.json'
+import sharedoc_artifacts from '../../../build/contracts/ShareDoc.json'
 import { default as IPFSUploader } from 'ipfs-image-web-upload';
 
 var content_hash = [];
