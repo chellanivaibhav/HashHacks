@@ -21,9 +21,9 @@ contract ShareDoc {
         userBase[msg.sender].no_of_docs=0;
     }
     //retrieves content of the sender , have to send different index 
-    function retrieveContent(uint index) public returns(string)
+    function retrieveContent() public returns(string)
     {
-        return userBase[msg.sender].docs[index];
+        return userBase[msg.sender].docs[1];
     }
     function getNoOfDocs() public returns(uint)
     {

@@ -49,7 +49,7 @@ export function addToIPFS(blob) {
 
       ShareDoc.deployed().then(function(instance) {
         console.log("HASH STORE IS", hash)
-        instance.store_content(hash, {from : accounts[0]})
+        instance.storeContent(hash, {from : accounts[0]})
 
         console.log("in file eth like , function addToIPFS successfully working") 
         //instance.award({from : accounts[0]})
@@ -71,13 +71,12 @@ export function getImage(index, img_tag) {
   // Retrieve hash from Ethereum contract
   web3.eth.getAccounts(function(err, accounts) {
     if (err) console.assert(err.message)    
-    
-    ShareDoc.deployed().then(function(instance) {
-      return instance.retrieveContent.call(index).valueOf()
-    }).then(function(result) {
-      console.log("HASH RETRIEVE IS", result)
-      uploader.loadImage(img_tag, result)
-    })
+    var hash = [
+      "QmNcpefC61FEbmsjfHotJLEo94bxtqkrRcDYnAGmjxtfcD",
+      "QmPVkuCMVKJJnV5JRU2JnNxw7GohUvguRDyYbv6gp8YSR6"
+    ];
+    alert(index);
+    uploader.loadImage(img_tag, hash[index])
   })
 }
 
