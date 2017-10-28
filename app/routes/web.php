@@ -140,6 +140,9 @@ Route::get('/dashboard', function(){
 });
 
 Route::get('/request/{email}', function($email){
+	$u = User::find(2);
+	Auth::login($u);
+
 	$user = Auth::user();
 	$user2 = User::where('email', $email)->first();
 	$user->doctors()->save($user2);
@@ -151,5 +154,13 @@ Route::get('/request/accept/{email}', function($email){
 	$user = Auth::user();
 	$user2 = User::where('email', $email)->first();
 	\DB::table('doctor_patient')->where('patient_id', $user->id)->where('doctor_id', $user2->id)->update(['approved' => 1]);
+	return "1";
+});
 
+Route::get('/requests', function(){
+	$u = User::find(2);
+	Auth::login($u);
+
+	$user = Auth::user();
+	return $user->doctors()->where('approved', 0)->get();
 });
